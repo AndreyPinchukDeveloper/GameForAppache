@@ -6,6 +6,7 @@ public class Credits : MonoBehaviour
 {
     public void Quit()
     {
+        Debug.Log("The button is work!");
         Application.Quit();
     }
 }

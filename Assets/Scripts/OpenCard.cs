@@ -20,13 +20,13 @@ public class OpenCard : MonoBehaviour
         if (cardBack.activeSelf)
         {
            cardBack.SetActive(false);
-           Load();
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           StartCoroutine(Load());
         }
     }
 
     IEnumerator Load()
     {
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

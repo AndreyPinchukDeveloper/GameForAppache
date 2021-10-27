@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
 
 public class OpenCard : MonoBehaviour
 {
@@ -18,7 +20,13 @@ public class OpenCard : MonoBehaviour
         if (cardBack.activeSelf)
         {
            cardBack.SetActive(false);
+           Load();
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-       
+    }
+
+    IEnumerator Load()
+    {
+        yield return new WaitForSeconds(50f);
     }
 }
